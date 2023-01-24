@@ -1,13 +1,12 @@
 const express = require('express')
 const router = express.Router();
-const {CreateUser} = require("./controllerR")
-const {SignIn} = require("./controllerSI")
+const { CreateUser } = require("../controllers/controllerR")
+const { SignIn } = require("../controllers/controllerSI")
+const {ParkData} = require("../controllers/controllerH")
 
-router.get('/home',(req,res)=>{
-    res.send('Hello World')
-})
-router.post('/posted',CreateUser)
-router.post('/signIn',SignIn)
+router.get('/home',ParkData)
+router.post('/posted', CreateUser)
+router.post('/signIn', SignIn)
 
 
-module.exports= router
+module.exports = router
