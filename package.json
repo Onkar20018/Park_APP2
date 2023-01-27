@@ -12,6 +12,7 @@
     "@expo/webpack-config": "^0.17.2",
     "@react-navigation/native": "^6.1.2",
     "@react-navigation/native-stack": "^6.9.8",
+    "axios": "^1.2.3",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "expo": "~47.0.12",

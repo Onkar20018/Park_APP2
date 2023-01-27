@@ -1,20 +1,36 @@
-import { SafeAreaView, Text,Image,TouchableOpacity } from 'react-native'
-import React from 'react'
-
+import { SafeAreaView,Text, View } from 'react-native'
+import React, { useEffect , useState } from 'react'
+import axios from 'axios'
 
 
 const Home = () => {
+
+  const [data, setdata] = useState([])
+  let i ="6"
+  useEffect( () => {
+    axios.get('http://localhost:8000/home').then((res)=>{
+      setdata(res.data)
+       console.log(res.data[i]);
+      console.log(res.data);
+      console.log(res);
+    })
+    //  console.log(data[0].i);
+    
+  }, []);
+   Object.entries(data).map(x=>console.log(x[0]))
+  
+
   return (
     <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}>
-      
-      <Image source={require('../../assets/dl.jpg')}
-        style={{ height: 150, width: 150}}
-        ></Image>
-        <TouchableOpacity>
-        <Text style={{ fontSize: 25, paddingBottom: 8, backgroundColor: 'purple', borderRadius: 8, paddingHorizontal: 80, color: 'white' }} >Login</Text>
-      </TouchableOpacity>
+         <View style={{flex:1,justifyContent:"center"}}>
+            <Text>
+                    {data[6]}
+            </Text>
+         </View>
     </SafeAreaView>
   )
 }
 
 export default Home
+ 
+
