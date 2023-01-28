@@ -16,20 +16,30 @@ const Home = () => {
     })
     //  console.log(data[0].i);
     
-  }, []);
+  }, [data]);
     
-  //  Object.entries(data).map(
-  //             x=>console.log(x)
-  //   )
   
+   
 
   return (
-    <SafeAreaView style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}>
-         <View style={{flex:0,justifyContent:"center"}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
+         <View style={{flex:1 , width:250,borderColor:"black",borderWidth:10,flexWrap:"wrap",alignSelf:"center",backgroundColor:"red"}}>
             {
               Object.entries((data)).map((x)=>{
-                    return(
-                      <View style={{backgroundColor:'red',height:15}}  key={x[0]}>
+                  if (x[0]==31 || x[0==42] || x[0]==57) {
+                     return(<>
+                      <View style={{backgroundColor:'white',height:40,alignItems:"center",padding:5,}}  >
+                        <Text></Text>
+                      </View>
+                      <View style={{backgroundColor:'red',height:40,alignItems:"center",padding:5}} >
+                        <Text>{x[0]}</Text>
+                      </View>
+                     </>
+                     )
+                  }    
+                return(
+
+                      <View style={{backgroundColor:'red',height:40,alignItems:"center",padding:5}}  key={x[0]}>
                         <Text>{x[0]}</Text>
                       </View>
 

@@ -7,13 +7,12 @@ exports.ParkData= async (req, res) => {
         if (err) throw err;
         var ParkApp = db.db("ParkApp");
         var data;
-        ParkApp.collection("CarInfo").findOne({}, function(err, result) {
+        ParkApp.collection("CarInfo").findOne({},{projection: {_id: 0}}, function(err, result) {
           if (err) {
          return res.send(442).json({ status: "fail", message: "got nothing" })
           }
           data = result
           db.close();
-          console.log("Got Data");
           res.send(data)
         });
       });
