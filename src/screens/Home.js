@@ -38,8 +38,8 @@ const Home = () => {
             if (x[0] == 32 || x[0] == 43 || x[0] == 58) {
               if (x[1] == false) {
                 return (<>
-                  <View style={{ height:Dheight/15,  margin:6, alignItems:"center",borderRadius:15,width:60   }}  >
-        <MaterialIcons  name="cancel" size={40} color='black' style={{marginTop:4}} />
+                  <View style={{ height:Dheight/15,  margin:6, alignItems:"center",borderWidth:2,width:60   }}  >
+        <MaterialIcons  name="cancel" size={40} color='black'  />
                    
                   </View>
                   <View style={{ height:Dheight/15,  margin:6, alignItems:"center",width:60 ,borderWidth:2,backgroundColor:"red" }} key={x[0]}>
@@ -52,8 +52,8 @@ const Home = () => {
                 )
               } else {
                 return (<>
-                   <View style={{ height:Dheight/15,  margin:6, alignItems:"center",borderRadius:15,width:60   }}  >
-        <MaterialIcons  name="cancel" size={40} color='black'  style={{marginTop:4}} />       
+                   <View style={{ height:Dheight/15,  margin:6, alignItems:"center",borderWidth:2,width:60   }}  >
+        <MaterialIcons  name="cancel" size={40} color='black'   />       
                   </View>
                   <View style={{height:Dheight/15, margin:6, alignItems:"center",width:60   }} >
                   <Image source={require('../../assets/park.png') }
