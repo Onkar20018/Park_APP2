@@ -77,13 +77,13 @@ const Register = ({navigation}) => {
       </View>
 
       <TouchableOpacity onPress={PostData} style={{backgroundColor:'darkolivegreen',borderRadius:8,paddingBottom:5,marginHorizontal:25}} >
-      <Text style={{fontSize:30 , color:'white',alignSelf:"center"}} >Register</Text>
+      <Text style={{fontSize:30 , color:'black',alignSelf:"center"}} >Register</Text>
       </TouchableOpacity>
      
       <View style={{flexDirection:'row',alignSelf:"center"}}>
            <Text style={{fontSize:18,marginTop:8}}>Already Registered ?</Text>   
           <TouchableOpacity onPress={()=>{navigation.navigate('Login')}}>
-            <Text style={{fontSize:18,color:'darkolivegreen',marginTop:8}}> Login</Text>
+            <Text style={{fontSize:18,color:'darkolivegreen',marginTop:6}}> Login</Text>
           </TouchableOpacity>
       </View>  
             </View>

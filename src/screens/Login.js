@@ -28,7 +28,7 @@ const Login = ({ navigation }) => {
       } else {
         console.log("Welcome:",JSON.stringify(data.email));
         Alert.alert("Welcome ", JSON.stringify(data.email))
-        navigation.navigate('Home')
+        navigation.navigate('Selection')
       }
 
 
@@ -43,10 +43,10 @@ const Login = ({ navigation }) => {
      
      < View style={{alignItems:"center"}}>
       <Image source={require('../../assets/remove.jpg')}
-        style={{ height: 350, width:350, marginBottom: 20,transform:[{rotate:'360deg'}] }}
+        style={{ height: 350, width:350, marginBottom: 5,transform:[{rotate:'360deg'}] }}
         ></Image>
         </View>
-      
+       {/* <View style={{borderWidth:3}}></View> */}
       <Text style={{  fontSize:32, marginLeft: 20,marginTop:15}}>Login System</Text>
       <View style={{margin:20}}>
       <Text style={{fontSize:22,marginBottom:6}}>UserName</Text>
@@ -68,7 +68,7 @@ const Login = ({ navigation }) => {
       </View>
 
       <TouchableOpacity onPress={SignIn} style={{ backgroundColor:"darkolivegreen",  marginBottom:0, borderRadius: 10,paddingVertical:8,marginTop:30}}>
-        <Text style={{  textAlign:"center",color:"white",fontSize:31}} >Login</Text>
+        <Text style={{  textAlign:"center",color:"black",fontSize:31}} >Login</Text>
       </TouchableOpacity>
         </View>
       <View style={{ flexDirection: 'row',alignSelf:"center" }}>
