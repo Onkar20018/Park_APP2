@@ -40,50 +40,50 @@ const Register = ({navigation}) => {
 
 
   return (
-    <SafeAreaView style={{ flex: 1, justifyContent: 'center', backgroundColor: 'white' }}>
+    <SafeAreaView style={{ flex: 1, justifyContent: 'center', backgroundColor: 'paleturquoise' }}>
             <View style={{paddingHorizontal:25}}>
 
                <View style={{alignSelf:"center"}}>
-      <Image source={require('../../assets/dl.jpg')}
-        style={{ height: 230, width: 230 ,marginBottom:25,transform:[{rotate:'-10deg'}]}}
+      <Image source={require('../../assets/remove.jpg')}
+        style={{ height: 325, width: 325 ,marginBottom:25,transform:[{rotate:'360deg'}] }}
         ></Image>
      
         </View>       
-      <Text style={{fontSize:28,marginBottom:8,fontWeight:500,flex:1}}>Register System</Text>
-     
-      <View style={{flexDirection:'row', borderBottomColor:'black',borderBottomWidth:1,borderColor:'black',marginBottom:7 }}>
-      <MaterialIcons  name="badge" size={20} color='black' style={{marginRight:7}} />
-      <TextInput placeholder="Full Name" name="name" value={name} onChange={(e)=>{setName(e.target.value)}} style={{fontSize:20,flex:1,textAlign:"justify",marginLeft:20,fontWeight:200 }} />
+      <Text style={{fontSize:28,marginBottom:8,flex:1}}>Register System</Text>
+      <Text style={{fontSize:20}}>Name</Text>
+      <View style={{flexDirection:'row', borderRadius:5,borderWidth:1,borderColor:'black',marginBottom:7 }}>
+      <MaterialIcons  name="badge" size={25} color='black' style={{marginRight:7}} />
+      <TextInput placeholder="Sachin Tendulkar" name="name"  value={name} onChange={(e)=>{setName(e.target.value)}} style={{height:30,fontSize:20,flex:1,textAlign:"justify",marginLeft:5 }} />
       </View>
-     
-      <View style={{flexDirection:'row', borderBottomColor:'black',borderBottomWidth:1,borderColor:'black',marginBottom:7 }}>
-      <MaterialIcons  name="email" size={20} color='black' style={{marginRight:7}} />
-      <TextInput placeholder="Email ID" name="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} style={{fontSize:20,flex:1,textAlign:"justify",marginLeft:20,fontWeight:200 }} />
+      <Text style={{fontSize:20}}>Email ID</Text>
+      <View style={{flexDirection:'row', borderRadius:5,borderWidth:1,borderColor:'black',marginBottom:7 }}>
+      <MaterialIcons  name="email" size={25} color='black' style={{marginRight:7}} />
+      <TextInput placeholder="Sachin@something.com" name="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} style={{height:30,fontSize:20,flex:1,textAlign:"justify"}} />
       </View>
-     
-      <View style={{flexDirection:'row', borderBottomColor:'black',borderBottomWidth:1,borderColor:'black',marginBottom:7 }}>
-      <MaterialIcons  name="call" size={20} color='black' style={{marginRight:7}} />
-      <TextInput placeholder="Phone Number" name="phone" value={phone} onChange={(e)=>{setPhone(e.target.value)}} keyboardType="numeric" style={{fontSize:20,flex:1,textAlign:"justify",marginLeft:20,fontWeight:200 }} />
+      <Text style={{fontSize:20}}>Phone Number</Text>
+      <View style={{flexDirection:'row', borderRadius:5,borderWidth:1,borderColor:'black',marginBottom:7 }}>
+      <MaterialIcons  name="call" size={25} color='black' style={{marginRight:7}} />
+      <TextInput placeholder="123475890" name="phone" value={phone} onChange={(e)=>{setPhone(e.target.value)}} keyboardType="numeric" style={{fontSize:20,flex:1,textAlign:"justify",marginLeft:5 }} />
       </View>
-     
-      <View style={{flexDirection:'row', borderBottomColor:'black',borderBottomWidth:1,borderColor:'black',marginBottom:7 }}>
-      <MaterialIcons  name="lock" size={20} color='black' style={{marginRight:7}} />
-      <TextInput placeholder="PassWord" name="password" value={password} onChange={(e)=>{setPassword(e.target.value)}} style={{fontSize:20,textAlign:'justify',flex:1,marginLeft:20,fontWeight:200 }}secureTextEntry={true} />
+      <Text style={{fontSize:20}}>PassWord</Text>
+      <View style={{flexDirection:'row', borderRadius:5,borderWidth:1,borderColor:'black',marginBottom:7 }}>
+      <MaterialIcons  name="lock" size={25} color='black' style={{marginRight:7}} />
+      <TextInput placeholder="SecureMe#007" name="password" value={password} onChange={(e)=>{setPassword(e.target.value)}} style={{height:30,fontSize:20,textAlign:'justify',flex:1 ,marginLeft:5}}secureTextEntry={true} />
       </View>
-     
-      <View style={{flexDirection:'row', borderBottomColor:'black',borderBottomWidth:1,borderColor:'black',marginBottom:15 }}>
-      <MaterialIcons  name="lock" size={20} color='black' style={{marginRight:7}} />
-      <TextInput placeholder="Confirm PassWord" name="cpassword" value={cpassword} onChange={(e)=>{setCpassword(e.target.value)}} style={{fontSize:20,flex:1,textAlign:"justify",marginLeft:20,fontWeight:200 }}secureTextEntry={true} />
+      <Text style={{fontSize:20}}>Confirm PassWord</Text>
+      <View style={{flexDirection:'row', borderRadius:5,borderWidth:1,borderColor:'black',marginBottom:15 }}>
+      <MaterialIcons  name="lock" size={25} color='black' style={{marginRight:7}} />
+      <TextInput placeholder="SecureMe#007" name="cpassword" value={cpassword} onChange={(e)=>{setCpassword(e.target.value)}} style={{height:30,fontSize:20,flex:1,textAlign:"justify",marginLeft:5}}secureTextEntry={true} />
       </View>
 
-      <TouchableOpacity onPress={PostData} style={{backgroundColor:'blue',borderRadius:8,paddingBottom:5,marginHorizontal:25}} >
-      <Text style={{fontSize:28 , color:'white',alignSelf:"center"}} >Register</Text>
+      <TouchableOpacity onPress={PostData} style={{backgroundColor:'darkolivegreen',borderRadius:8,paddingBottom:5,marginHorizontal:25}} >
+      <Text style={{fontSize:30 , color:'white',alignSelf:"center"}} >Register</Text>
       </TouchableOpacity>
      
       <View style={{flexDirection:'row',alignSelf:"center"}}>
-           <Text style={{fontSize:16,marginTop:8}}>Already Registered ?</Text>   
+           <Text style={{fontSize:18,marginTop:8}}>Already Registered ?</Text>   
           <TouchableOpacity onPress={()=>{navigation.navigate('Login')}}>
-            <Text style={{fontSize:16,color:'blue',fontWeight:700,marginTop:8}}> Login</Text>
+            <Text style={{fontSize:18,color:'darkolivegreen',marginTop:8}}> Login</Text>
           </TouchableOpacity>
       </View>  
             </View>
