@@ -43,9 +43,9 @@ const Home = () => {
       <View style={{backgroundColor:'paleturquoise'}} >
         <View style={{flexDirection:"row",borderBottomColor:'black',borderBottomWidth:20,borderBottomRadius:35,backgroundColor:'darkolivegreen'}}>
       <Image source={require('../../assets/remove.jpg')}
-        style={{marginLeft:20, height: 120, width:120,transform:[{rotate:'360deg'}] }}
+        style={{marginLeft:30, marginTop:5,height: 120, width:120,transform:[{rotate:'360deg'}] }}
         ></Image>
-         <Text style={{fontSize:60,  color:"black" ,marginLeft:200,marginTop:45}}>
+         <Text style={{fontSize:60,  color:"paleturquoise" ,marginLeft:270,marginTop:45}}>
             ParkApp
          </Text>       
         </View>
@@ -101,15 +101,17 @@ const Home = () => {
         <MaterialIcons  name="schedule" size={28} color='black' style={{marginLeft:12,marginTop:2}} />
            <Text style={{fontSize:20,marginLeft:10,marginTop:1}}>06:00 AM - 11:00 PM</Text>
            </View >
-           <View style={{flexDirection:'row',marginTop:10,alignSelf:'center'}}>
-           <MaterialIcons  name="directions" size={60} color='black' style={{marginLeft:10}} />
-        
-           <Text style={{fontSize:35,marginLeft:5,marginTop:1}}>Parking Availability:[{free}/69] </Text>
+           <View style={{borderBottomWidth:5}}>
+
+           </View>
+           <View style={{flexDirection:'row',marginTop:10,paddingBottom:10,borderTopLeftRadius:35,borderTopRightRadius:35,paddingHorizontal:20,borderTopWidth:5,borderLeftWidth:5,borderRightWidth:5,borderBottomWidth:5,alignSelf:'center',backgroundColor:'black'}}>
+           {/* <MaterialIcons  name="directions" size={60} color='black' style={{marginLeft:10}} /> */}
+           <Text style={{fontSize:35,marginLeft:5,marginTop:1,color:"paleturquoise"}}>Parking Availability:[{free}/69] </Text>
            </View>
            
          </View>
   
-        <View style={{height:Dheight,width: '100%',borderTopWidth:40 , flexWrap: "wrap", alignSelf: "center",paddingTop:40,paddingBottom:40,borderBottomWidth:40,marginTop:1,borderRadius:35,backgroundColor:'darkolivegreen'}}>         
+        <View style={{height:Dheight,width: '100%',borderTopWidth:40 , flexWrap: "wrap", alignSelf: "center",paddingTop:40,paddingBottom:40,borderBottomWidth:40,marginTop:-51,borderRadius:35,backgroundColor:'darkolivegreen'}}>         
         {
           Object.entries((data)).map((x) => {
              
@@ -176,5 +178,3 @@ const Home = () => {
 }
 
 export default Home
-
-
