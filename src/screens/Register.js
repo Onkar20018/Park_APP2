@@ -15,6 +15,7 @@ const Register = ({navigation}) => {
             e.preventDefault(); 
                let data={name,email,phone,password,cpassword}
             const res = await fetch("http://localhost:8000/posted",{
+                                      
               method:"POST",
               headers:{
                 "Content-Type":"application/json"
@@ -28,8 +29,8 @@ const Register = ({navigation}) => {
               Alert.alert("Not Registerd",resp.message)
              }else{
               console.log("Registred")
-              Alert.alert("Yes ")
-              navigation.navigate('Home')
+              Alert.alert("Yes")
+              navigation.navigate('OnBoard')
              }
 
           } catch (error) {
@@ -45,7 +46,7 @@ const Register = ({navigation}) => {
 
                <View style={{alignSelf:"center"}}>
       <Image source={require('../../assets/remove.jpg')}
-        style={{ height: 325, width: 325 ,marginBottom:25,transform:[{rotate:'360deg'}] }}
+        style={{ height: 325, width: 325 ,marginBottom:2,transform:[{rotate:'360deg'}] }}
         ></Image>
      
         </View>       
@@ -53,7 +54,10 @@ const Register = ({navigation}) => {
       <Text style={{fontSize:20}}>Name</Text>
       <View style={{flexDirection:'row', borderRadius:5,borderWidth:1,borderColor:'black',marginBottom:7 }}>
       <MaterialIcons  name="badge" size={25} color='black' style={{marginRight:7}} />
-      <TextInput placeholder="Sachin Tendulkar" name="name"  value={name} onChange={(e)=>{setName(e.target.value)}} style={{height:30,fontSize:20,flex:1,textAlign:"justify",marginLeft:5 }} />
+      <TextInput placeholder="Sachin Tendulkar" name="name"  value={name} onChange={(e)=>{
+        setName(e.target.value)
+        console.log("Changing");
+        }} style={{height:30,fontSize:20,flex:1,textAlign:"justify",marginLeft:5 }} />
       </View>
       <Text style={{fontSize:20}}>Email ID</Text>
       <View style={{flexDirection:'row', borderRadius:5,borderWidth:1,borderColor:'black',marginBottom:7 }}>

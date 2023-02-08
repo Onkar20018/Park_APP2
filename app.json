@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "Park_App2",
-    "slug": "Park_App2",
+    "name": "Park App",
+    "slug": "Park-App",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "icon":"./assets/icon.png"
   }
 }
