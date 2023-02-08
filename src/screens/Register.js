@@ -1,5 +1,5 @@
 import React ,{useState} from "react";
-import { TextInput,SafeAreaView,View, Text, Image, TouchableOpacity, Alert } from 'react-native'
+import { TextInput,SafeAreaView,View, Text, Image, TouchableOpacity, Alert, ScrollView } from 'react-native'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 
 const Register = ({navigation}) => {
@@ -14,7 +14,7 @@ const Register = ({navigation}) => {
 
             e.preventDefault(); 
                let data={name,email,phone,password,cpassword}
-            const res = await fetch("http://localhost:8000/posted",{
+            const res = await fetch("http://45a3-2409-4040-e8c-67e9-c95e-dd9a-3325-9ce0.in.ngrok.io/posted",{
                                       
               method:"POST",
               headers:{
@@ -42,15 +42,15 @@ const Register = ({navigation}) => {
 
   return (
     <SafeAreaView style={{ flex: 1, justifyContent: 'center', backgroundColor: 'paleturquoise' }}>
+                 <ScrollView>
             <View style={{paddingHorizontal:25}}>
 
                <View style={{alignSelf:"center"}}>
       <Image source={require('../../assets/remove.jpg')}
-        style={{ height: 325, width: 325 ,marginBottom:2,transform:[{rotate:'360deg'}] }}
+        style={{ height: 280, width: 280 ,marginBottom:2,transform:[{rotate:'360deg'}] }}
         ></Image>
-     
-        </View>       
-      <Text style={{fontSize:28,marginBottom:8,flex:1}}>Register System</Text>
+        </View>  
+      <Text style={{fontSize:28,marginBottom:6,flex:1}}>Register System</Text>
       <Text style={{fontSize:20}}>Name</Text>
       <View style={{flexDirection:'row', borderRadius:5,borderWidth:1,borderColor:'black',marginBottom:7 }}>
       <MaterialIcons  name="badge" size={25} color='black' style={{marginRight:7}} />
@@ -60,37 +60,38 @@ const Register = ({navigation}) => {
         }} style={{height:30,fontSize:20,flex:1,textAlign:"justify",marginLeft:5 }} />
       </View>
       <Text style={{fontSize:20}}>Email ID</Text>
-      <View style={{flexDirection:'row', borderRadius:5,borderWidth:1,borderColor:'black',marginBottom:7 }}>
+      <View style={{flexDirection:'row', borderRadius:5,borderWidth:1,borderColor:'black',marginBottom:4 }}>
       <MaterialIcons  name="email" size={25} color='black' style={{marginRight:7}} />
       <TextInput placeholder="Sachin@something.com" name="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} style={{height:30,fontSize:20,flex:1,textAlign:"justify"}} />
       </View>
       <Text style={{fontSize:20}}>Phone Number</Text>
-      <View style={{flexDirection:'row', borderRadius:5,borderWidth:1,borderColor:'black',marginBottom:7 }}>
+      <View style={{flexDirection:'row', borderRadius:5,borderWidth:1,borderColor:'black',marginBottom:4 }}>
       <MaterialIcons  name="call" size={25} color='black' style={{marginRight:7}} />
       <TextInput placeholder="123475890" name="phone" value={phone} onChange={(e)=>{setPhone(e.target.value)}} keyboardType="numeric" style={{fontSize:20,flex:1,textAlign:"justify",marginLeft:5 }} />
       </View>
       <Text style={{fontSize:20}}>PassWord</Text>
-      <View style={{flexDirection:'row', borderRadius:5,borderWidth:1,borderColor:'black',marginBottom:7 }}>
-      <MaterialIcons  name="lock" size={25} color='black' style={{marginRight:7}} />
+      <View style={{flexDirection:'row', borderRadius:5,borderWidth:1,borderColor:'black',marginBottom:4 }}>
+        <MaterialIcons  name="lock" size={25} color='black' style={{marginRight:7}} />
       <TextInput placeholder="SecureMe#007" name="password" value={password} onChange={(e)=>{setPassword(e.target.value)}} style={{height:30,fontSize:20,textAlign:'justify',flex:1 ,marginLeft:5}}secureTextEntry={true} />
       </View>
       <Text style={{fontSize:20}}>Confirm PassWord</Text>
       <View style={{flexDirection:'row', borderRadius:5,borderWidth:1,borderColor:'black',marginBottom:15 }}>
-      <MaterialIcons  name="lock" size={25} color='black' style={{marginRight:7}} />
+        <MaterialIcons  name="lock" size={25} color='black' style={{marginRight:7}} />
       <TextInput placeholder="SecureMe#007" name="cpassword" value={cpassword} onChange={(e)=>{setCpassword(e.target.value)}} style={{height:30,fontSize:20,flex:1,textAlign:"justify",marginLeft:5}}secureTextEntry={true} />
       </View>
 
       <TouchableOpacity onPress={PostData} style={{backgroundColor:'darkolivegreen',borderRadius:8,paddingBottom:5,marginHorizontal:25}} >
-      <Text style={{fontSize:30 , color:'black',alignSelf:"center"}} >Register</Text>
+      <Text style={{fontSize:28, color:'black',alignSelf:"center"}} >Register</Text>
       </TouchableOpacity>
      
       <View style={{flexDirection:'row',alignSelf:"center"}}>
-           <Text style={{fontSize:18,marginTop:8}}>Already Registered ?</Text>   
+           <Text style={{fontSize:18,marginTop:2}}>Already Registered ?</Text>   
           <TouchableOpacity onPress={()=>{navigation.navigate('Login')}}>
-            <Text style={{fontSize:18,color:'darkolivegreen',marginTop:6}}> Login</Text>
+            <Text style={{fontSize:18,color:'darkolivegreen',marginTop:2}}> Login</Text>
           </TouchableOpacity>
       </View>  
             </View>
+          </ScrollView>     
     
     </SafeAreaView>
   )

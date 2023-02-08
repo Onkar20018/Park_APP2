@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextInput, Dimensions,SafeAreaView, View, Text, Image, TouchableOpacity, Alert, ImageBackground } from 'react-native'
+import { TextInput, Dimensions,SafeAreaView, View, Text, Image, TouchableOpacity, Alert, ScrollView } from 'react-native'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 const Dheight =  Dimensions.get("window").height;
 const Dwidth =  Dimensions.get("window").width;

@@ -17,5 +17,5 @@ app.use(express.json());
 app.use(userRouter)
 
 app.listen(port,()=>{
-    console.log(`Example JS at Sever ${port} `)
+    console.log(`Connected JS at Sever ${port} `)
 })

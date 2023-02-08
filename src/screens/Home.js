@@ -1,4 +1,4 @@
-import { SafeAreaView, Text, View,Dimensions,Image,ImageBackground } from 'react-native'
+import { SafeAreaView, Text, View,Dimensions,Image,ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
@@ -18,7 +18,7 @@ const Home = () => {
   var R5=[]
   var R6=[]
   useEffect(() => {
-    axios.get('http://localhost:8000/home').then((res) => {
+    axios.get('http://fec2-2409-4040-d12-d71-6121-8700-98c3-edd.in.ngrok.io/home').then((res) => {
       if (res.data!=null) {
         setdata(res.data)
 
@@ -32,15 +32,15 @@ const Home = () => {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: 'paleturquoise' }}>
-      <View style={{backgroundColor:'paleturquoise'}} >
-        <View style={{flexDirection:"row",borderBottomColor:'black',borderBottomWidth:20,borderBottomRadius:35,backgroundColor:'darkolivegreen'}}>
-      <Image source={require('../../assets/remove.jpg')}
+        <View style={{flexDirection:"row",borderBottomColor:'black',borderBottomWidth:7,backgroundColor:'darkolivegreen',justifyContent:'center'}}>
+      {/* <Image source={require('../../assets/remove.jpg')}
         style={{marginLeft:20, height: 30, width:30,transform:[{rotate:'360deg'}] }}
-        ></Image>
-         <Text style={{fontSize:60,  color:"black" ,marginLeft:40,marginTop:45}}>
+        ></Image> */}
+         <Text style={{fontSize:40,  color:"black" ,marginTop:20}}>
             ParkApp
          </Text>       
         </View>
+      <ScrollView style={{backgroundColor:'paleturquoise'}} >
          <View>
            {
              Object.entries((data)).map((x)=>{
@@ -73,86 +73,93 @@ const Home = () => {
            
            <View style={{flexDirection:'row',marginTop:10}}>
 
-        <MaterialIcons  name="apartment" size={30} color='black' style={{marginLeft:10}} />
-           <Text style={{fontSize:28,marginLeft:5}}>Nakshatra Mall </Text>
+        <MaterialIcons  name="apartment" size={20} color='black' style={{marginLeft:10}} />
+           <Text style={{fontSize:20,marginLeft:5}}>Nakshatra Mall </Text>
            </View>
            
            <View style={{flex:0}}>
            <View style={{flexDirection:'row',marginTop:10,}}>
-        <MaterialIcons  name="room" size={35} color='black' style={{marginLeft:8}} />
+        <MaterialIcons  name="room" size={25} color='black' style={{marginLeft:8}} />
            {/* <LocationOnIcon/> */}
            <Text style={{fontSize:15,marginLeft:5}}>385, N C. Kelkar Marg, Dadar West, </Text>
            </View>
-           <Text style={{fontSize:15,marginLeft:48,marginTop:-15}}>Mumbai, Maharashtra 400028 </Text>
-           </View>
-           <View style={{flexDirection:'row',marginTop:60,}}>
-           <MaterialIcons  name="today" size={28} color='black' style={{marginLeft:12}} />
-           <Text style={{fontSize:20,marginLeft:10}}>MON - SUN</Text>
+           <Text style={{fontSize:15,marginLeft:38,marginTop:-5}}>Mumbai, Maharashtra 400028 </Text>
            </View>
            <View style={{flexDirection:'row',marginTop:10,}}>
-        <MaterialIcons  name="schedule" size={28} color='black' style={{marginLeft:12,marginTop:2}} />
-           <Text style={{fontSize:20,marginLeft:10,marginTop:1}}>06:00 AM - 11:00 PM</Text>
-           </View >
-           <View style={{flexDirection:'row',marginTop:10,alignSelf:'center'}}>
-           <MaterialIcons  name="directions" size={60} color='black' style={{marginLeft:10}} />
-        
-           <Text style={{fontSize:35,marginLeft:5,marginTop:1}}>Parking Availability:[{free}/69] </Text>
+           <MaterialIcons  name="today" size={20} color='black' style={{marginLeft:12}} />
+           <Text style={{fontSize:15,marginLeft:10}}>MON - SUN</Text>
            </View>
-           
+           <View style={{flexDirection:'row',marginTop:10,}}>
+        <MaterialIcons  name="schedule" size={20} color='black' style={{marginLeft:12,marginTop:2}} />
+           <Text style={{fontSize:15,marginLeft:10,marginTop:1}}>06:00 AM - 11:00 PM</Text>
+           </View >
+           <View style={{borderWidth:1,marginTop:2}}></View>
+           <View style={{flexDirection:'row',marginTop:2,alignSelf:'center'}}>
+           <MaterialIcons  name="directions" size={30} color='black' style={{marginLeft:10}} />        
+           <Text style={{fontSize:25,marginLeft:5,marginTop:1}}>Parking Availability:[{free}/69] </Text>
+           </View>
          </View>
-  
-        <View style={{height:Dheight,width: '100%',borderTopWidth:40 , flexWrap: "wrap", alignSelf: "center",paddingTop:40,paddingBottom:40,borderBottomWidth:40,marginTop:1,borderRadius:35,backgroundColor:'darkolivegreen'}}>         
+        {/*////////////////////////////////////////////////////////////////////////*/}
+        <View style={{height:Dheight,width: '100%',borderTopWidth:7, flexWrap: "wrap", alignSelf: "center",paddingTop:20,marginTop:1,backgroundColor:'darkolivegreen'}}>         
         {
           Object.entries((data)).map((x) => {
              
             if (x[0] == 32 || x[0] == 43 || x[0] == 58) {
               if (x[1] == false) {
-                return (<View key={x[0]}>
-                  <View  style={{ height:Dheight/16,  margin:6, alignItems:"center",borderWidth:2,width:80,marginLeft:20   }}  >
-        <MaterialIcons  name="cancel" size={60} color='black' style={{marginTop:4}} />
-                   
+                return (
+                <View key={x[0]}>
+                
+                  <View  style={{ height:Dheight/16,  margin:6, alignItems:"center",borderWidth:2,width:30,marginLeft:10   }}  >
+        <MaterialIcons  name="cancel" size={10} color='black' style={{marginTop:4}} />
                   </View>
-                  <View   style={{ height:Dheight/16,  margin:6,marginLeft:20, alignItems:"center",width:80 ,borderWidth:2,backgroundColor:'708090' }}>
-                   <Image source={require('../../assets/CARR.jpg')}
+                  
+                  <View   style={{ height:Dheight/16,  margin:6,marginLeft:10, alignItems:"center",width:30 ,borderWidth:2,backgroundColor:'708090' }}>
+                   {/* <Image source={require('../../assets/CARR.jpg')}
         style={{ height: 80,  width: 50,borderColor:'black',borderWidth:2,marginTop:-5,transform:[{rotate:'90deg'}]}}
-        ></Image>
-         <Text  style={{backgroundColor:'black', color:"white",marginTop:-71 ,marginLeft:94}}>{x[0]}</Text>
+        ></Image> */}
+         <Text  style={{backgroundColor:'black', color:"white"}}>{x[0]}</Text>
+                
                 </View>
+                
                 </View>
                 )
               } else {
-                return (<View key={x[0]}>
-                   <View  style={{ height:Dheight/16,  margin:6, alignItems:"center",borderWidth:2,width:80,marginLeft:20   }}  >
-        <MaterialIcons  name="cancel" size={60} color='black' style={{marginTop:4}} />
-                   
+                return (
+                <View key={x[0]}>
+                
+                   <View  style={{ height:Dheight/16,  margin:6, alignItems:"center",borderWidth:2,width:30,marginLeft:10   }}  >
+        <MaterialIcons  name="cancel" size={10} color='black' style={{marginTop:4}} />
                   </View>
-                  <View key={x[0]}   style={{height:Dheight/16, margin:6, alignItems:"center",width:60 ,marginLeft:20  }} >
-                  <Image source={require('../../assets/park.jpg') }
+
+                  <View key={x[0]}   style={{height:Dheight/16, margin:6, alignItems:"center",width:30 ,marginLeft:10 ,borderWidth:2 }} >
+                  {/* <Image source={require('../../assets/park.jpg') }
         style={{ height: 88, width: 60,marginLeft:30,transform:[{rotate:'90deg'}],borderWidth:2 }}
-        ></Image>
-         <Text  style={{color:'white',marginTop:-74,marginLeft:134,backgroundColor:"black"}}>{x[0]}</Text>
+        ></Image>*/
+         <Text  style={{color:'white',backgroundColor:"black"}}>{x[0]}</Text>
+                   }
                   </View>
+                
                 </View>
                 )
               }
             }
             if (x[1] == true) {
               return (
-                <View  key={x[0]}  style={{height:Dheight/16, margin:6, alignItems:"center",width:60 ,marginLeft:20  }} >
-                  <Image source={require('../../assets/park.jpg') }
+                <View  key={x[0]}  style={{height:Dheight/16, margin:6, alignItems:"center",width:30 ,marginLeft:10 ,borderWidth:2 }} >
+                  {/* <Image source={require('../../assets/park.jpg') }
         style={{ height: 88, width: 60,marginLeft:30,transform:[{rotate:'90deg'}],borderWidth:2 }}
-        ></Image>
-         <Text   style={{color:'white',marginTop:-74,marginLeft:134,backgroundColor:"black"}}>{x[0]}</Text>
+        ></Image> */}
+         <Text   style={{color:'white',backgroundColor:"black"}}>{x[0]}</Text>
                   </View>
 
 )
 } else {
   return (
-    <View  key={x[0]}  style={{height:Dheight/16,  margin:6,marginLeft:20, alignItems:"center",width:80 ,borderWidth:2,backgroundColor:'708090' }} >
-                   <Image source={require('../../assets/CARR.jpg')}
+    <View  key={x[0]}  style={{height:Dheight/16,  margin:6,marginLeft:10, alignItems:"center",width:40 ,borderWidth:2,backgroundColor:'708090' }} >
+                   {/* <Image source={require('../../assets/CARR.jpg')}
         style={{ height: 80,  width: 50,borderColor:'black',borderWidth:2,marginTop:-5,transform:[{rotate:'90deg'}]}}
-        ></Image>
-         <Text  style={{backgroundColor:'black', color:"white",marginTop:-71 ,marginLeft:94}}>{x[0]}</Text>
+        ></Image> */}
+         <Text  style={{backgroundColor:'black', color:"white"}}>{x[0]}</Text>
                 </View>
 
 )
@@ -163,11 +170,9 @@ const Home = () => {
 }
 
 </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   )
 }
 
 export default Home
-
-
