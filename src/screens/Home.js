@@ -18,7 +18,7 @@ const Home = () => {
   var R5=[]
   var R6=[]
   useEffect(() => {
-    axios.get('http://fec2-2409-4040-d12-d71-6121-8700-98c3-edd.in.ngrok.io/home').then((res) => {
+    axios.get('http://28ec-2409-4040-d10-6000-448b-962d-501d-960f.in.ngrok.io/home').then((res) => {
       if (res.data!=null) {
         setdata(res.data)
 
@@ -34,7 +34,7 @@ const Home = () => {
     <SafeAreaView style={{ flex: 1, backgroundColor: 'paleturquoise' }}>
         <View style={{flexDirection:"row",borderBottomColor:'black',borderBottomWidth:7,backgroundColor:'darkolivegreen',justifyContent:'center'}}>
       {/* <Image source={require('../../assets/remove.jpg')}
-        style={{marginLeft:20, height: 30, width:30,transform:[{rotate:'360deg'}] }}
+        style={{marginLeft:20, height: 30, width:50,transform:[{rotate:'360deg'}] }}
         ></Image> */}
          <Text style={{fontSize:40,  color:"black" ,marginTop:20}}>
             ParkApp
@@ -100,7 +100,7 @@ const Home = () => {
            </View>
          </View>
         {/*////////////////////////////////////////////////////////////////////////*/}
-        <View style={{height:Dheight,width: '100%',borderTopWidth:7, flexWrap: "wrap", alignSelf: "center",paddingTop:20,marginTop:1,backgroundColor:'darkolivegreen'}}>         
+        <View style={{height:Dheight,width: '100%',borderTopWidth:7,borderBottomWidth:7, flexWrap: "wrap", alignSelf: "center",paddingTop:20,marginTop:1,backgroundColor:'darkolivegreen'}}>         
         {
           Object.entries((data)).map((x) => {
              
@@ -109,16 +109,14 @@ const Home = () => {
                 return (
                 <View key={x[0]}>
                 
-                  <View  style={{ height:Dheight/16,  margin:6, alignItems:"center",borderWidth:2,width:30,marginLeft:10   }}  >
-        <MaterialIcons  name="cancel" size={10} color='black' style={{marginTop:4}} />
+                  <View  style={{ height:Dheight/16,  margin:6, alignItems:"center",borderWidth:2,width:50,marginLeft:9  }}  >
+        <MaterialIcons  name="cancel" size={35} color='black' style={{marginTop:4}} />
                   </View>
                   
-                  <View   style={{ height:Dheight/16,  margin:6,marginLeft:10, alignItems:"center",width:30 ,borderWidth:2,backgroundColor:'708090' }}>
-                   {/* <Image source={require('../../assets/CARR.jpg')}
-        style={{ height: 80,  width: 50,borderColor:'black',borderWidth:2,marginTop:-5,transform:[{rotate:'90deg'}]}}
-        ></Image> */}
-         <Text  style={{backgroundColor:'black', color:"white"}}>{x[0]}</Text>
-                
+                  <View    style={{height:Dheight/16,  margin:6,marginLeft:9, alignItems:"center",width:50 ,borderWidth:2,backgroundColor:'708090' }} >
+                 <Image source={require('../../assets/CARR.jpg')}
+        style={{ height: 40,width:26,transform:[{rotate:'90deg'}],marginTop:-8,borderBottomWidth:1}}></Image> 
+         <Text  style={{fontSize:11 , color:"black",marginRight:32,marginTop:-4}}>{x[0]}</Text>
                 </View>
                 
                 </View>
@@ -127,16 +125,15 @@ const Home = () => {
                 return (
                 <View key={x[0]}>
                 
-                   <View  style={{ height:Dheight/16,  margin:6, alignItems:"center",borderWidth:2,width:30,marginLeft:10   }}  >
-        <MaterialIcons  name="cancel" size={10} color='black' style={{marginTop:4}} />
+                   <View  style={{ height:Dheight/16,  margin:6, alignItems:"center",borderWidth:2,width:50,marginLeft:9   }}  >
+        <MaterialIcons  name="cancel" size={35} color='black' style={{marginTop:4}} />
                   </View>
 
-                  <View key={x[0]}   style={{height:Dheight/16, margin:6, alignItems:"center",width:30 ,marginLeft:10 ,borderWidth:2 }} >
-                  {/* <Image source={require('../../assets/park.jpg') }
-        style={{ height: 88, width: 60,marginLeft:30,transform:[{rotate:'90deg'}],borderWidth:2 }}
-        ></Image>*/
-         <Text  style={{color:'white',backgroundColor:"black"}}>{x[0]}</Text>
-                   }
+                  <View  key={x[0]}  style={{height:Dheight/16, margin:6, alignItems:"center",width:50 ,marginLeft:9  }} >
+                  <Image source={require('../../assets/park.jpg') }
+        style={{ height:Dheight/16, width: 40,transform:[{rotate:'90deg'}],marginTop:-2}}
+        ></Image>
+         <Text  style={{fontSize:11 , color:"black",marginRight:32,marginTop:-18}}>{x[0]}</Text>
                   </View>
                 
                 </View>
@@ -145,22 +142,24 @@ const Home = () => {
             }
             if (x[1] == true) {
               return (
-                <View  key={x[0]}  style={{height:Dheight/16, margin:6, alignItems:"center",width:30 ,marginLeft:10 ,borderWidth:2 }} >
-                  {/* <Image source={require('../../assets/park.jpg') }
-        style={{ height: 88, width: 60,marginLeft:30,transform:[{rotate:'90deg'}],borderWidth:2 }}
-        ></Image> */}
-         <Text   style={{color:'white',backgroundColor:"black"}}>{x[0]}</Text>
+                <View  key={x[0]}  style={{height:Dheight/16, margin:6, alignItems:"center",width:50 ,marginLeft:9  }} >
+                  <Image source={require('../../assets/park.jpg') }
+        style={{ height:Dheight/16, width: 40,transform:[{rotate:'90deg'}],marginTop:-2}}
+        ></Image>
+         <Text  style={{fontSize:11 , color:"black",marginRight:32,marginTop:-18}}>{x[0]}</Text>
                   </View>
 
 )
 } else {
   return (
-    <View  key={x[0]}  style={{height:Dheight/16,  margin:6,marginLeft:10, alignItems:"center",width:40 ,borderWidth:2,backgroundColor:'708090' }} >
-                   {/* <Image source={require('../../assets/CARR.jpg')}
-        style={{ height: 80,  width: 50,borderColor:'black',borderWidth:2,marginTop:-5,transform:[{rotate:'90deg'}]}}
-        ></Image> */}
-         <Text  style={{backgroundColor:'black', color:"white"}}>{x[0]}</Text>
+    <View key={x[0]}>
+
+    <View    style={{height:Dheight/16,  margin:6,marginLeft:9, alignItems:"center",width:50 ,borderWidth:2,backgroundColor:'708090' }} >
+                 <Image source={require('../../assets/CARR.jpg')}
+        style={{ height: 40,width:26,transform:[{rotate:'90deg'}],marginTop:-8,borderBottomWidth:1}}></Image> 
+         <Text  style={{fontSize:11 , color:"black",marginRight:32,marginTop:-4}}>{x[0]}</Text>
                 </View>
+      </View>
 
 )
 }
