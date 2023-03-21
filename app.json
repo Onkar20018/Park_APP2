@@ -6,6 +6,11 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "icon":"./assets/icon.png"
+    "icon": "./assets/icon.png",
+    "extra": {
+      "eas": {
+        "projectId": "3bc19142-0187-4573-aaa5-401d2e46d5e7"
+      }
+    }
   }
 }

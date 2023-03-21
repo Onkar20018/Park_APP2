@@ -39,11 +39,13 @@ const Login = ({ navigation }) => {
  
 
   return (
-    <SafeAreaView style={{ flex: 1, justifyContent: 'center', backgroundColor: 'paleturquoise' }}>
+    
+
+    <SafeAreaView style={{ flex: 1, justifyContent: 'center', backgroundColor: 'rgb(255, 204, 0)' }}>
      
      < View style={{alignItems:"center"}}>
       <Image source={require('../../assets/remove.jpg')}
-        style={{ height: 350, width:350, marginBottom: 5,transform:[{rotate:'360deg'}] }}
+        style={{ height: Dheight/2.5, width:Dwidth/1.3, marginBottom: 5,transform:[{rotate:'360deg'}] }}
         ></Image>
         </View>
        {/* <View style={{borderWidth:3}}></View> */}
@@ -51,8 +53,8 @@ const Login = ({ navigation }) => {
       <View style={{margin:20}}>
       <Text style={{fontSize:22,marginBottom:6}}>UserName</Text>
       <View style={{ flexDirection: 'row', borderColor: 'black', borderWidth: 1, borderColor: 'black', marginBottom: 8 ,borderRadius:5}}> 
-        <MaterialIcons name="email" size={25} style={{marginRight:15}} />
-        <TextInput name="email" placeholder="SomeOne@Something.com" style={{ fontSize: 20,textAlign:"justify",flex:1,height:35 }}
+        <MaterialIcons name="email"  size={25} style={{marginRight:15,marginTop:5,marginLeft:5}} />
+        <TextInput name="email" placeholder="SomeOne@Something.com" style={{ fontSize: 20,textAlign:"justify",flex:1,height:35,color:"white" }}
           value={email}
           onChange={(e) => { setEmail(e.target.value) }}
           />
@@ -60,21 +62,21 @@ const Login = ({ navigation }) => {
       <Text style={{fontSize:22,marginBottom:6}}>PassWord</Text>
 
       <View style={{ flexDirection: 'row', borderRadius:5,borderColor: 'black', borderWidth: 1, borderColor: 'black', marginBottom: 15 }}>
-        <MaterialIcons  name="lock" size={25} color='black' style={{marginRight:15}} />
-        <TextInput name="password" placeholder="***Secured***" style={{ fontSize: 20,textAlign:"justify",flex:1 ,height:35}} secureTextEntry={true}
+        <MaterialIcons  name="lock" size={25} color='black' style={{marginRight:15,marginTop:5,marginLeft:5}} />
+        <TextInput name="password" placeholder="***Secured***" style={{ fontSize: 20,textAlign:"justify",flex:1 ,height:35,color:"black"}} secureTextEntry={true}
           value={password}
           onChange={(e) => { setPass(e.target.value) }}
         />
       </View>
 
-      <TouchableOpacity onPress={SignIn} style={{ backgroundColor:"darkolivegreen",  marginBottom:0, borderRadius: 10,paddingVertical:8,marginTop:30}}>
-        <Text style={{  textAlign:"center",color:"black",fontSize:31}} >Login</Text>
+      <TouchableOpacity onPress={SignIn} style={{ backgroundColor:"black",  marginBottom:0, borderRadius: 10,paddingVertical:4,marginTop:20}}>
+        <Text style={{  textAlign:"center",color:"white",fontSize:31}} >Login</Text>
       </TouchableOpacity>
         </View>
       <View style={{ flexDirection: 'row',alignSelf:"center" }}>
         <Text style={{ fontSize: 22}}>New to Parko?</Text>
         <TouchableOpacity onPress={() => { navigation.navigate('Register') }}>
-          <Text style={{ fontSize: 22, color: 'darkolivegreen'}}> Register</Text>
+          <Text style={{ fontSize: 22, color: 'white'}}> Register</Text>
         </TouchableOpacity>
       </View>
       
@@ -82,6 +84,7 @@ const Login = ({ navigation }) => {
   
     
     </SafeAreaView>
+    
     )
   }
 

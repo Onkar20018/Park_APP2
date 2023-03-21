@@ -1,5 +1,5 @@
 import React  from "react";
-import {Text, Dimensions,TouchableOpacity,View,Image, SafeAreaView, Alert} from "react-native"
+import {Text, Dimensions,TouchableOpacity,View,Image, SafeAreaView, ScrollView} from "react-native"
 
 const Dheight =  Dimensions.get("window").height;
 const Dwidth =  Dimensions.get("window").width;
@@ -28,28 +28,30 @@ const Dwidth =  Dimensions.get("window").width;
 // export default OnBoard;
 const OnBoard =({navigation})=>{
     return(
-  <SafeAreaView style={{backgroundColor:"paleturquoise"}}>
-    < View style={{alignItems:"center",backgroundColor:"paleturquoise"}}>
+  <ScrollView style={{backgroundColor:"rgb(255, 204, 0)"}}>
+    < View style={{alignItems:"center"}}>
+    <Text style={{fontSize:50,marginTop:50}}>SpotAPark</Text>
       <Image source={require('../../assets/remove.jpg')}
-        style={{ height: Dheight/2.2, width:Dwidth,backgroundColor:"paleturquoise",paddingTop:200 }}
+        style={{ height: Dheight/2.2, width:Dwidth,backgroundColor:"rgb(255, 204, 0)",paddingTop:0 }}
         ></Image>
         </View>
-    <View style={{height:Dheight,width:Dwidth,borderRadius:10,borderTopWidth:5,borderLeftWidth:5,borderRightWidth:5, backgroundColor:"paleturquoise"}}>
-           <Text style={{marginLeft:35,fontSize:50,marginTop:100}}>Welcome,</Text>        
-           <Text style={{marginLeft:50,fontSize:20,marginTop:20,color:"gray"}}>Leave the hectic task of finding parking spot to Us...</Text>
-           <Text style={{marginLeft:50,fontSize:20,marginTop:12,color:"gray"}}>Live update of each parking spot is provided in a Single Click</Text>
+    <View style={{height:Dheight,width:Dwidth,borderRadius:10,borderTopWidth:0,borderLeftWidth:0,borderRightWidth:0, backgroundColor:"rgb(255, 204, 0)"}}>
+                  
+           <Text style={{marginLeft:50,fontSize:20,marginTop:20,color:"black"}}>No more circling the block, just SpotAPark.</Text>
+           {/* <Text style={{marginLeft:50,fontSize:22,marginTop:0,color:"black"}}>                 SpotAPark</Text> */}
+           <Text style={{marginLeft:50,fontSize:20,marginTop:12,color:"black"}}>Live Updates of each Parking Spot is provided in a Single Click.</Text>
+           <Text style={{marginLeft:50,fontSize:20,marginTop:12,color:"black"}}>Your Parking Solution is just a Tap Away!</Text>
            <View style={{flex:0,alignItems:"center"}}>
-          <TouchableOpacity style={{backgroundColor:"darkolivegreen",height:60,width:300,borderRadius:30,borderColor:"paleturquoise",alignItems:"center",marginTop:65}}>
-            <Text style={{fontSize:29,marginTop:7,color:"black"}}
+          <TouchableOpacity style={{backgroundColor:"black",height:60,width:300,borderRadius:30,borderColor:"paleturquoise",alignItems:"center",marginTop:45}}>
+            <Text style={{fontSize:29,marginTop:7,color:"white"}}
              onPress={() => {
-              Alert.alert("Going") 
               navigation.navigate('Login') }}
             >Lets, Go</Text>
           </TouchableOpacity>
             </View>        
            </View>
     
-  </SafeAreaView>
+  </ScrollView>
 
 )}
 export default OnBoard

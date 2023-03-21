@@ -2,7 +2,6 @@ import { SafeAreaView, Text, View,Dimensions,Image,ScrollView } from 'react-nati
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-import EvilIcons from '@expo/vector-icons/EvilIcons'
 
 const Dheight =  Dimensions.get("window").height;
 const Dwidth =  Dimensions.get("window").width;
@@ -18,7 +17,7 @@ const Home = () => {
   var R5=[]
   var R6=[]
   useEffect(() => {
-    axios.get('http://28ec-2409-4040-d10-6000-448b-962d-501d-960f.in.ngrok.io/home').then((res) => {
+    axios.get('http://161a-49-32-193-12.in.ngrok.io/home').then((res) => {
       if (res.data!=null) {
         setdata(res.data)
 
@@ -32,7 +31,7 @@ const Home = () => {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: 'paleturquoise' }}>
-        <View style={{flexDirection:"row",borderBottomColor:'black',borderBottomWidth:7,backgroundColor:'darkolivegreen',justifyContent:'center'}}>
+        <View style={{flexDirection:"row",borderBottomColor:'black',borderBottomWidth:7,backgroundColor:'darkseagreen',justifyContent:'center'}}>
       {/* <Image source={require('../../assets/remove.jpg')}
         style={{marginLeft:20, height: 30, width:50,transform:[{rotate:'360deg'}] }}
         ></Image> */}
@@ -100,7 +99,7 @@ const Home = () => {
            </View>
          </View>
         {/*////////////////////////////////////////////////////////////////////////*/}
-        <View style={{height:Dheight,width: '100%',borderTopWidth:7,borderBottomWidth:7, flexWrap: "wrap", alignSelf: "center",paddingTop:20,marginTop:1,backgroundColor:'darkolivegreen'}}>         
+        <View style={{height:Dheight,width: '100%',borderTopWidth:7,borderBottomWidth:7, flexWrap: "wrap", alignSelf: "center",paddingTop:20,marginTop:1,backgroundColor:'darkseagreen'}}>         
         {
           Object.entries((data)).map((x) => {
              
@@ -108,15 +107,14 @@ const Home = () => {
               if (x[1] == false) {
                 return (
                 <View key={x[0]}>
-                
-                  <View  style={{ height:Dheight/16,  margin:6, alignItems:"center",borderWidth:2,width:50,marginLeft:9  }}  >
+                  <View  style={{ height:Dheight/17,  margin:6, alignItems:"center",borderWidth:2,width:50,marginLeft:9  }}  >
         <MaterialIcons  name="cancel" size={35} color='black' style={{marginTop:4}} />
                   </View>
                   
-                  <View    style={{height:Dheight/16,  margin:6,marginLeft:9, alignItems:"center",width:50 ,borderWidth:2,backgroundColor:'708090' }} >
+                  <View    style={{ height:Dheight/17,  margin:6,marginLeft:9, alignItems:"center",width:50 ,borderWidth:2,backgroundColor:'708090',backgroundColor:"white" }} >
                  <Image source={require('../../assets/CARR.jpg')}
         style={{ height: 40,width:26,transform:[{rotate:'90deg'}],marginTop:-8,borderBottomWidth:1}}></Image> 
-         <Text  style={{fontSize:11 , color:"black",marginRight:32,marginTop:-4}}>{x[0]}</Text>
+         <Text  style={{fontSize:11 , color:"black",marginRight:30,marginTop:-10}}>{x[0]}</Text>
                 </View>
                 
                 </View>
@@ -125,15 +123,15 @@ const Home = () => {
                 return (
                 <View key={x[0]}>
                 
-                   <View  style={{ height:Dheight/16,  margin:6, alignItems:"center",borderWidth:2,width:50,marginLeft:9   }}  >
+                   <View  style={{ height:Dheight/17,  margin:6, alignItems:"center",borderWidth:2,width:50,marginLeft:9   }}  >
         <MaterialIcons  name="cancel" size={35} color='black' style={{marginTop:4}} />
                   </View>
 
-                  <View  key={x[0]}  style={{height:Dheight/16, margin:6, alignItems:"center",width:50 ,marginLeft:9  }} >
+                  <View  key={x[0]}  style={{ height:Dheight/17, margin:6, alignItems:"center",width:50 ,marginLeft:9  }} >
                   <Image source={require('../../assets/park.jpg') }
-        style={{ height:Dheight/16, width: 40,transform:[{rotate:'90deg'}],marginTop:-2}}
+        style={{ height:Dheight/17, width: 40,transform:[{rotate:'90deg'}],marginTop:-2}}
         ></Image>
-         <Text  style={{fontSize:11 , color:"black",marginRight:32,marginTop:-18}}>{x[0]}</Text>
+         <Text  style={{fontSize:11 , color:"black",marginRight:25,marginTop:-14}}>{x[0]}</Text>
                   </View>
                 
                 </View>
@@ -142,11 +140,11 @@ const Home = () => {
             }
             if (x[1] == true) {
               return (
-                <View  key={x[0]}  style={{height:Dheight/16, margin:6, alignItems:"center",width:50 ,marginLeft:9  }} >
+                <View  key={x[0]}  style={{ height:Dheight/17, margin:6, alignItems:"center",width:50 ,marginLeft:9  }} >
                   <Image source={require('../../assets/park.jpg') }
-        style={{ height:Dheight/16, width: 40,transform:[{rotate:'90deg'}],marginTop:-2}}
+        style={{ height:Dheight/17, width: 40,transform:[{rotate:'90deg'}],marginTop:-2}}
         ></Image>
-         <Text  style={{fontSize:11 , color:"black",marginRight:32,marginTop:-18}}>{x[0]}</Text>
+         <Text  style={{fontSize:11 , color:"black",marginRight:25,marginTop:-14}}>{x[0]}</Text>
                   </View>
 
 )
@@ -154,10 +152,10 @@ const Home = () => {
   return (
     <View key={x[0]}>
 
-    <View    style={{height:Dheight/16,  margin:6,marginLeft:9, alignItems:"center",width:50 ,borderWidth:2,backgroundColor:'708090' }} >
+    <View    style={{ height:Dheight/17,  margin:6,marginLeft:9, alignItems:"center",width:50 ,borderWidth:2,backgroundColor:'708090',backgroundColor:"white" }} >
                  <Image source={require('../../assets/CARR.jpg')}
         style={{ height: 40,width:26,transform:[{rotate:'90deg'}],marginTop:-8,borderBottomWidth:1}}></Image> 
-         <Text  style={{fontSize:11 , color:"black",marginRight:32,marginTop:-4}}>{x[0]}</Text>
+         <Text  style={{fontSize:11 , color:"black",marginRight:32,marginTop:-10}}>{x[0]}</Text>
                 </View>
       </View>
 
