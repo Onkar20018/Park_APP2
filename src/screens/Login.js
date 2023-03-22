@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextInput, Dimensions,SafeAreaView, View, Text, Image, TouchableOpacity, Alert, ScrollView } from 'react-native'
+import { TextInput, Dimensions,SafeAreaView, View, Text, Image, TouchableOpacity, Alert, ScrollView, Switch } from 'react-native'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 const Dheight =  Dimensions.get("window").height;
 const Dwidth =  Dimensions.get("window").width;
@@ -9,30 +9,32 @@ const Login = ({ navigation }) => {
 
   const SignIn = async (e) => {
     try {
-      e.preventDefault();
-      // console.log("INSide")
-      var data = { email, password }
+      navigation.navigate('Selection')
+      // e.preventDefault();
+      // // console.log("INSide")
+      // var data = { email, password }
      
-      const res = await fetch('http://localhost:8000/signIn', {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
-      const resp = await res.json();
-       // console.log(resp)
-      if (res.status ===442 || !resp) {
-        console.log("Error:",resp.message);
-        Alert.alert("Invalid User Please Check Credentials Again",resp.message)
-      } else {
-        console.log("Welcome:",JSON.stringify(data.email));
-        Alert.alert("Welcome ", JSON.stringify(data.email))
-        navigation.navigate('Selection')
-      }
+      // const res = await fetch('http://cea7-2405-204-99-1bb4-2010-bf03-3c21-975b.in.ngrok.io/signIn', {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json"
+      //   },
+      //   body: JSON.stringify(data)
+      // });
+      // const resp = await res.json();
+      //  // console.log(resp)
+      // if (res.status ===442 || !resp) {
+      //   console.log("Error:",resp.message);
+      //   Alert.alert("Invalid User Please Check Credentials Again",resp.message)
+      // } else {
+      //   console.log("Welcome:",JSON.stringify(data.email));
+      //   Alert.alert("Welcome ", JSON.stringify(data.email))
+      //   navigation.navigate('Selection')
+      // }
 
 
     } catch (error) {
+      navigation.navigate('Selection')
       console.log("Error while Login ", error)
     }
   }
@@ -54,7 +56,7 @@ const Login = ({ navigation }) => {
       <Text style={{fontSize:22,marginBottom:6}}>UserName</Text>
       <View style={{ flexDirection: 'row', borderColor: 'black', borderWidth: 1, borderColor: 'black', marginBottom: 8 ,borderRadius:5}}> 
         <MaterialIcons name="email"  size={25} style={{marginRight:15,marginTop:5,marginLeft:5}} />
-        <TextInput name="email" placeholder="SomeOne@Something.com" style={{ fontSize: 20,textAlign:"justify",flex:1,height:35,color:"white" }}
+        <TextInput name="email" placeholder="SomeOne@Something.com" style={{ fontSize: 20,textAlign:"justify",flex:1,height:35,color:"black" }}
           value={email}
           onChange={(e) => { setEmail(e.target.value) }}
           />

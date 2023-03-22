@@ -18,7 +18,7 @@ const Home = () => {
   var R5=[]
   var R6=[]
   useEffect(() => {
-    axios.get('http://2940-2405-204-99-1bb4-50b2-58ac-2538-72d4.in.ngrok.io/home').then((res) => {
+    axios.get('http://4a29-2405-204-2201-5134-e948-90c5-6c30-a88c.in.ngrok.io/home').then((res) => {
       if (res.data!=null) {
         setdata(res.data)
 

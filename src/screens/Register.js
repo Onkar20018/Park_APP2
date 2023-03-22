@@ -14,7 +14,7 @@ const Register = ({navigation}) => {
 
             e.preventDefault(); 
                let data={name,email,phone,password,cpassword}
-            const res = await fetch("http://localhost:8000/posted",{
+            const res = await fetch("http://cea7-2405-204-99-1bb4-2010-bf03-3c21-975b.in.ngrok.io/posted",{
                                       
               method:"POST",
               headers:{
