@@ -2,7 +2,7 @@ import { SafeAreaView, Text, View,Dimensions,Image,ScrollView } from 'react-nati
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-import EvilIcons from '@expo/vector-icons/EvilIcons'
+
 
 const Dheight =  Dimensions.get("window").height;
 const Dwidth =  Dimensions.get("window").width;
@@ -18,10 +18,9 @@ const Home = () => {
   var R5=[]
   var R6=[]
   useEffect(() => {
-    axios.get('http://4a29-2405-204-2201-5134-e948-90c5-6c30-a88c.in.ngrok.io/home').then((res) => {
+    axios.get('http://1071-2409-4040-d0c-6e78-9126-61e2-307d-b138.in.ngrok.io/home2').then((res) => {
       if (res.data!=null) {
         setdata(res.data)
-
       }  
     }).catch((err)=>{
       console.log("Error in Axios(CarData):",err.response.data);
@@ -75,16 +74,16 @@ const Home = () => {
            <View style={{flexDirection:'row',marginTop:10, }}>
 
         <MaterialIcons  name="apartment" size={20} color='rgb(255, 204, 0)' style={{marginLeft:10}} />
-           <Text style={{fontSize:20,marginLeft:5}}>Nakshatra Mall </Text>
+           <Text style={{fontSize:20,marginLeft:5}}>Infinity Mall </Text>
            </View>
            
            <View style={{flex:0}}>
            <View style={{flexDirection:'row',marginTop:10,}}>
         <MaterialIcons  name="room" size={25} color='rgb(255, 204, 0)' style={{marginLeft:8}} />
            {/* <LocationOnIcon/> */}
-           <Text style={{fontSize:15,marginLeft:5}}>385, N C. Kelkar Marg, Dadar West, </Text>
+           <Text style={{fontSize:15,marginLeft:5}}>New Link Road,Phase D, Oshiwara, </Text>
            </View>
-           <Text style={{fontSize:15,marginLeft:38,marginTop:-5}}>Mumbai, Maharashtra 400028 </Text>
+           <Text style={{fontSize:15,marginLeft:38,marginTop:-5}}>Andheri (West), Maharashtra 400053 </Text>
            </View>
            <View style={{flexDirection:'row',marginTop:10,}}>
            <MaterialIcons  name="today" size={20} color='rgb(255, 204, 0)' style={{marginLeft:12}} />
@@ -92,7 +91,7 @@ const Home = () => {
            </View>
            <View style={{flexDirection:'row',marginTop:10,}}>
         <MaterialIcons  name="schedule" size={20} color='rgb(255, 204, 0)' style={{marginLeft:12,marginTop:2}} />
-           <Text style={{fontSize:15,marginLeft:10,marginTop:1, marginBottom:10}}>06:00 AM - 11:00 PM</Text>
+           <Text style={{fontSize:15,marginLeft:10,marginTop:1, marginBottom:10}}>10:00 AM - 01:00 AM</Text>
            </View >
            <View style={{borderWidth:0,marginTop:2}}></View>
            {/* <View style={{flexDirection:'row',marginTop:2,alignSelf:'center'}}>
@@ -132,76 +131,57 @@ const Home = () => {
            
            <View style={{flexDirection:'row',marginTop:2,alignSelf:'center',backgroundColor:'#eeeeee'}}>
            <MaterialIcons  name="directions" size={30} color='rgb(255, 204, 0)' style={{marginLeft:10}} />        
-           <Text style={{fontSize:25,marginLeft:5,marginTop:1}}>Parking Availability:[{free}/69] </Text>
+           <Text style={{fontSize:25,marginLeft:5,marginTop:1}}>Parking Availability:[{free}/12] </Text>
            </View>
          </View>
         {/*////////////////////////////////////////////////////////////////////////*/}
         <View style={{height:Dheight,width: '100%',borderTopWidth:0,borderBottomWidth:0, flexWrap: "wrap", alignSelf: "center",paddingTop:20,marginTop:1,backgroundColor:'rgb(255, 204, 0)'}}>         
         {
-          Object.entries((data)).map((x) => {
-             
-            if (x[0] == 32 || x[0] == 43 || x[0] == 58) {
+          Object.entries((data)).map((x) => {           
               if (x[1] == false) {
                 return (
-                <View key={x[0]}>
-                
-                  <View  style={{ height:Dheight/16,  margin:6, alignItems:"center",borderWidth:0,width:50,marginLeft:9  }}  >
-        <MaterialIcons  name="cancel" size={35} color='black' style={{marginTop:4}} />
-                  </View>
-                  
-                  <View    style={{height:Dheight/16,  margin:6,marginLeft:9, alignItems:"center",width:50 ,borderWidth:0,backgroundColor:'708090' }} >
-                 <Image source={require('../../assets/CARR.jpg')}
-        style={{ height: 40,width:26,transform:[{rotate:'90deg'}],marginTop:-8,borderBottomWidth:1}}></Image> 
-         <Text  style={{fontSize:11 , color:"black",marginRight:32,marginTop:-4}}>{x[0]}</Text>
-                </View>
-                
-                </View>
+                  <View key={x[0]}>
+                      <View    style={{height:Dheight/7,width:Dwidth/5,  margin:6,marginHorizontal:60, alignItems:"center",borderWidth:0,backgroundColor:'#eeeeee', borderRadius: 10, shadowColor: 'black',
+                       shadowOffset: {width: -2, height: 4},
+                       shadowOpacity: 0.2,
+                       shadowRadius: 3,}} >
+                                    <Image source={require('../../assets/CARR.jpg')}
+                           style={{ height: 70,width:45,transform:[{rotate:'90deg'}],marginTop:-3,borderBottomWidth:1}}></Image> 
+                            <Text  style={{fontSize:20 , color:'black',marginRight:42,marginTop:-1}}>{x[0]}</Text>
+                                   </View>
+                         </View>
                 )
-              } else {
-                return (
-                <View key={x[0]}>
-                
-                   <View  style={{ height:Dheight/16,  margin:6, alignItems:"center",borderWidth:0,width:50,marginLeft:9   }}  >
-        <MaterialIcons  name="cancel" size={35} color='black' style={{marginTop:4}} />
-                  </View>
-
-                  <View  key={x[0]}  style={{height:Dheight/16, margin:6, alignItems:"center",width:50 ,marginLeft:9  }} >
-                  <Image source={require('../../assets/park.jpg') }
-        style={{ height:Dheight/16, width: 40,transform:[{rotate:'90deg'}],marginTop:-2}}
-        ></Image>
-         <Text  style={{fontSize:11 , color:"black",marginRight:32,marginTop:-18}}>{x[0]}</Text>
-                  </View>
-                
-                </View>
-                )
-              }
-            }
+              } 
             if (x[1] == true) {
               return (
-                <View  key={x[0]}  style={{height:Dheight/16, margin:6, alignItems:"center",width:50 ,marginLeft:9  }} >
+                <View  key={x[0]}   style={{height:Dheight/7,width:Dwidth/5,   margin:6,marginHorizontal:60, alignItems:"center" ,borderWidth:0,backgroundColor:'#eeeeee', borderRadius: 10, shadowColor: 'black',
+                shadowOffset: {width: -2, height: 4},
+                shadowOpacity: 0.2,
+                shadowRadius: 3,}} >
                   <Image source={require('../../assets/park.jpg') }
-        style={{ height:Dheight/16, width: 40,transform:[{rotate:'90deg'}],marginTop:-2}}
+        style={{ height:Dheight/10, width: 50,transform:[{rotate:'90deg'}],marginTop:-2}}
         ></Image>
-         <Text  style={{fontSize:11 , color:"black",marginRight:32,marginTop:-18}}>{x[0]}</Text>
+         <Text  style={{fontSize:20 , color:"black",marginRight:42,marginTop:-1}}>{x[0]}</Text>
                   </View>
 
 )
-} else {
-  return (
-    <View key={x[0]}>
+} 
+// else {
+//   return (
+//     <View key={x[0]}>
 
-    <View    style={{height:Dheight/16,  margin:6,marginLeft:9, alignItems:"center",width:50 ,borderWidth:0,backgroundColor:'#eeeeee', borderRadius: 10, shadowColor: 'black',
-    shadowOffset: {width: -2, height: 4},
-    shadowOpacity: 0.2,
-    shadowRadius: 3,}} >
-                 <Image source={require('../../assets/CARR.jpg')}
-        style={{ height: 40,width:26,transform:[{rotate:'90deg'}],marginTop:-3,borderBottomWidth:1}}></Image> 
-         <Text  style={{fontSize:11 , color:'black',marginRight:15,marginTop:-8}}>{x[0]}</Text>
-                </View>
-      </View>
+//     <View    style={{height:Dheight/10,  margin:6,marginLeft:9, alignItems:"center",width:50 ,borderWidth:0,backgroundColor:'#eeeeee', borderRadius: 10, shadowColor: 'black',
+//     shadowOffset: {width: -2, height: 4},
+//     shadowOpacity: 0.2,
+//     shadowRadius: 3,}} >
+//                  <Image source={require('../../assets/CARR.jpg')}
+//         style={{ height: 40,width:26,transform:[{rotate:'90deg'}],marginTop:-3,borderBottomWidth:1}}></Image> 
+//          <Text  style={{fontSize:11 , color:'black',marginRight:15,marginTop:-8}}>{x[0]}</Text>
+//                 </View>
+//       </View>
 
-)
-}
+// )
+// }
 }
 )
 
